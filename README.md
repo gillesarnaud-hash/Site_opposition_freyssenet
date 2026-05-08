@@ -1,25 +1,53 @@
-# CODING AGENTS: READ THIS FIRST
+# Site_opposition_freyssenet
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+Site web de l'opposition au conseil municipal de **Freyssenet** (Ardèche, 46 habitants).
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+> *Freyssenet, l'avenir à construire ensemble.*
 
-## What you should do — IMPORTANT
+## Contenu
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+- **`index.html`** — site complet (CSS, JS et JSX inlinés). Référence les images depuis `project/logo.png` et `project/village.jpg`.
+- **`index-standalone.html`** — version 100 % autonome, avec les images encodées en base64 dans le fichier. Ouvre-toi tout seul dans un navigateur, sans serveur ni dépendance locale.
+- **`project/`** — fichiers source de la maquette (CSS, JSX, images, prototype Claude Design).
+- **`chats/`** — transcript de la conversation de design.
 
-**Read `project/index.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+## Sections du site
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+1. **Accueil** — hero, actualités/tribunes
+2. **Conseil municipal** — documents officiels (commune + CAPCA)
+3. **Bilan de la majorité** — indicateurs promesses/réalisé sur les mandats 2020-2026 et 2026-2032
+4. **Mon action** — tribunes, propositions, registre de votes
+5. **Vous avez la parole** — témoignages, boîte à idées, formulaire de contact
+6. **Notre commune** — patrimoine, vie associative, sondages
+7. **Météo** — Open-Meteo, Freyssenet (44,65° N — 4,55° E)
+8. **Qui sommes-nous** — fiche élu, charte en quatre engagements
 
-## About the design files
+## Pour visualiser
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+Ouvre `index-standalone.html` directement dans ton navigateur (double-clic). Aucun serveur nécessaire.
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+Pour servir avec un mini-serveur HTTP local :
+```bash
+python3 -m http.server 8000
+# puis ouvre http://localhost:8000/index.html
+```
 
-## Bundle contents
+## Personnalisation à chaud
 
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `site web communal d'opposition` project files (HTML prototypes, assets, components)
+Un panneau de tweaks (en bas à droite, déclenchable depuis l'interface Claude Design) permet d'ajuster :
+- la palette de couleurs (6 combinaisons)
+- la typographie (titres / corps)
+- le format des indicateurs (jauges / notes / feux)
+- le style des cartes (bordées / ombrées / remplies)
+- le ton éditorial (engagé / institutionnel)
+
+## À fournir / à compléter
+
+- Nom et portrait de l'élu d'opposition (placeholder dans la section *Qui sommes-nous*)
+- Photos du patrimoine (chapelle, four banal, lavoir, croix de mission)
+- Photo panoramique de la commune (section *Notre commune*)
+- Contenu réel des tribunes et documents officiels
+
+---
+
+*Site édité par l'élu d'opposition au conseil municipal de Freyssenet. Indépendant de la mairie.*
