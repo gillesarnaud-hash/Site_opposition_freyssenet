@@ -1,0 +1,1987 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Freyssenet Ensemble — Opposition municipale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Fraunces:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:wght@400;500;600&family=Public+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* Freyssenet Ensemble — site CSS */
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--fs-body, 'Public Sans', system-ui, sans-serif);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--c-ink, #1a1a1a);
+  background: var(--c-paper, #fafaf7);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; }
+a { text-decoration: none; color: inherit; cursor: pointer; }
+
+.site { min-height: 100vh; }
+
+/* ───── Header ───── */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--c-paper);
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  backdrop-filter: blur(12px);
+}
+.site-header__inner {
+  max-width: 1280px; margin: 0 auto;
+  padding: 14px 32px;
+  display: flex; align-items: center; gap: 32px;
+}
+.site-brand { display: flex; align-items: center; gap: 12px; }
+.site-brand__mark {
+  width: 40px; height: 40px; border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--c-paper); font-size: 22px; font-weight: 600;
+}
+.brand-mark { display: block; flex-shrink: 0; }
+.site-brand__name { font-size: 19px; font-weight: 500; line-height: 1.1; letter-spacing: -.01em; }
+.site-brand__sub { font-size: 11px; opacity: .55; letter-spacing: .04em; text-transform: uppercase; margin-top: 2px; }
+
+.site-nav { flex: 1; display: flex; gap: 4px; justify-content: center; }
+.site-nav__item {
+  position: relative;
+  background: transparent; border: 0;
+  padding: 8px 14px;
+  font-size: 14px; font-weight: 500;
+  color: rgba(0,0,0,.7);
+  border-radius: 4px;
+  transition: color .15s;
+}
+.site-nav__item:hover { color: var(--c-ink); background: rgba(0,0,0,.04); }
+.site-nav__item.is-active { color: var(--c-primary); }
+.site-nav__bar {
+  position: absolute; bottom: -16px; left: 14px; right: 14px;
+  height: 2px;
+}
+.site-cta {
+  border: 0; padding: 10px 18px;
+  font-size: 13px; font-weight: 600;
+  border-radius: 4px;
+  letter-spacing: .01em;
+}
+
+/* ───── Hero ───── */
+.hero {
+  max-width: 1280px; margin: 0 auto;
+  padding: 64px 32px 48px;
+}
+.hero__grid {
+  display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: center;
+}
+.hero__eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 12px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600;
+  margin-bottom: 24px;
+}
+.hero__pulse {
+  width: 8px; height: 8px; border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .4; }
+}
+.hero__title {
+  font-size: clamp(40px, 5vw, 68px);
+  line-height: 1.02;
+  font-weight: 400;
+  letter-spacing: -.02em;
+  margin: 0 0 24px;
+  text-wrap: balance;
+}
+.hero__lead {
+  font-size: 18px; line-height: 1.55;
+  opacity: .75; max-width: 520px;
+  margin: 0 0 32px;
+  text-wrap: pretty;
+}
+.hero__cta { display: flex; gap: 12px; margin-bottom: 48px; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 0; padding: 14px 22px;
+  font-size: 14px; font-weight: 600;
+  border-radius: 4px;
+  letter-spacing: .01em;
+  transition: transform .12s, box-shadow .12s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn--primary { color: #fff; }
+.btn--ghost {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,.2);
+  color: var(--c-ink);
+}
+.btn--ghost:hover { background: rgba(0,0,0,.04); }
+
+.hero__stats {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+  border-top: 1px solid rgba(0,0,0,.1);
+  padding-top: 24px;
+}
+.stat { padding-right: 16px; border-right: 1px solid rgba(0,0,0,.08); }
+.stat:last-child { border-right: 0; }
+.stat__n { font-size: 36px; font-weight: 400; line-height: 1; letter-spacing: -.02em; }
+.stat__l { font-size: 12px; opacity: .6; margin-top: 6px; line-height: 1.3; }
+
+.hero__right { display: flex; flex-direction: column; gap: 16px; }
+.hero__photo {
+  aspect-ratio: 4/3;
+  background: rgba(0,0,0,.04);
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.08);
+}
+.hero__photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: sepia(0.08) contrast(1.02);
+}
+.hero__caption {
+  font-style: italic; font-size: 14px; opacity: .75;
+  padding-left: 16px; border-left: 2px solid var(--c-primary);
+  line-height: 1.5;
+}
+
+/* ───── Placeholders ───── */
+.placeholder {
+  width: 100%; height: 100%; min-height: 200px;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(0,0,0,.04) 0, rgba(0,0,0,.04) 1px,
+    transparent 1px, transparent 12px
+  );
+  background-color: rgba(0,0,0,.02);
+  border: 1px solid rgba(0,0,0,.08);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.placeholder--wide { aspect-ratio: 16/7; }
+.placeholder--square { aspect-ratio: 1; }
+.placeholder--portrait { aspect-ratio: 3/4; }
+.placeholder__label {
+  font-family: ui-monospace, 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: .02em;
+  color: rgba(0,0,0,.45);
+  background: var(--c-paper);
+  padding: 4px 10px; border-radius: 2px;
+  text-align: center; max-width: 80%;
+}
+
+/* ───── Section title ───── */
+.sect-title { margin-bottom: 40px; }
+.sect-title__kicker {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.sect-title__line { width: 32px; height: 2px; }
+.sect-title h2 {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400; line-height: 1.05;
+  letter-spacing: -.02em;
+  margin: 0; max-width: 900px;
+  text-wrap: balance;
+}
+
+/* ───── Cards (generic) ───── */
+.card {
+  background: var(--card-bg, transparent);
+  border: var(--card-border, 1px solid rgba(0,0,0,.1));
+  box-shadow: var(--card-shadow, none);
+  border-radius: 4px;
+  padding: 24px;
+  transition: transform .15s, box-shadow .15s;
+}
+
+/* ───── Actus ───── */
+.actus { max-width: 1280px; margin: 0 auto; padding: 64px 32px; border-top: 1px solid rgba(0,0,0,.08); }
+.actus__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+.actu { display: flex; flex-direction: column; gap: 12px; }
+.actu--featured {
+  grid-row: span 2;
+  display: flex; flex-direction: column;
+}
+.actu__meta { display: flex; align-items: center; gap: 12px; font-size: 12px; }
+.actu__tag {
+  border: 1px solid; padding: 3px 8px; border-radius: 2px;
+  font-weight: 600; letter-spacing: .04em; text-transform: uppercase; font-size: 10px;
+}
+.actu__date { opacity: .55; }
+.actu h3 {
+  font-size: 22px; font-weight: 400; line-height: 1.2;
+  letter-spacing: -.01em; margin: 0;
+}
+.actu--featured h3 { font-size: 32px; }
+.actu p { font-size: 14px; opacity: .72; margin: 0; line-height: 1.55; }
+.actu__more { font-size: 13px; font-weight: 600; margin-top: auto; }
+.actu__hero { aspect-ratio: 16/9; margin-top: 16px; }
+
+/* ───── Bilan KPI ───── */
+.bilan { max-width: 1280px; margin: 0 auto; padding: 80px 32px; border-top: 1px solid rgba(0,0,0,.08); }
+.bilan__intro { font-size: 17px; max-width: 800px; line-height: 1.6; opacity: .78; margin: 0 0 32px; }
+
+.mandat-switch {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 12px; margin-bottom: 32px;
+  max-width: 760px;
+}
+.mandat-switch__btn {
+  text-align: left;
+  padding: 18px 22px;
+  background: transparent;
+  border: 1.5px solid rgba(0,0,0,.12);
+  border-radius: 4px;
+  transition: border-color .15s, background .15s;
+}
+.mandat-switch__btn:hover { background: rgba(0,0,0,.025); }
+.mandat-switch__btn.is-active { background: rgba(0,0,0,.025); }
+.mandat-switch__l {
+  font-size: 18px; font-weight: 400; letter-spacing: -.01em;
+  margin-bottom: 4px;
+}
+.mandat-switch__s { font-size: 12px; opacity: .65; letter-spacing: .02em; }
+
+.bilan__legend {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  padding: 16px 20px;
+  background: rgba(0,0,0,.025);
+  border-radius: 4px;
+  margin-bottom: 32px;
+  font-size: 13px;
+}
+.legend-item { display: flex; align-items: center; gap: 8px; }
+.legend-item span:first-child {
+  width: 12px; height: 12px; border-radius: 2px; display: inline-block;
+}
+
+.bilan__list { display: flex; flex-direction: column; gap: 16px; }
+.kpi-card {
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 4px;
+  padding: 28px 32px;
+  background: var(--c-paper);
+}
+.kpi-card__head {
+  display: grid; grid-template-columns: auto 1fr auto;
+  gap: 24px; align-items: start;
+  margin-bottom: 20px;
+}
+.kpi-card__num {
+  font-size: 44px; font-weight: 400; line-height: 1;
+  letter-spacing: -.03em; opacity: .9;
+}
+.kpi-card__title h3 {
+  font-size: 22px; font-weight: 400; margin: 0 0 4px;
+  letter-spacing: -.01em;
+}
+.kpi-card__title p { font-size: 14px; opacity: .65; margin: 0; font-style: italic; }
+.kpi-card__badge {
+  border: 1px solid; padding: 6px 12px; border-radius: 2px;
+  font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  white-space: nowrap;
+}
+.kpi-card__detail {
+  font-size: 14px; opacity: .72; margin: 16px 0 0; line-height: 1.55;
+  padding-top: 16px; border-top: 1px dashed rgba(0,0,0,.1);
+}
+
+/* KPI - jauges */
+.kpi-gauge { display: flex; flex-direction: column; gap: 10px; }
+.kpi-gauge__row {
+  display: grid; grid-template-columns: 90px 1fr 60px;
+  gap: 16px; align-items: center;
+  font-size: 13px; opacity: .85;
+}
+.kpi-gauge__bar {
+  height: 8px; background: rgba(0,0,0,.06); border-radius: 2px; overflow: hidden;
+}
+.kpi-gauge__bar > div { height: 100%; transition: width .6s; }
+.kpi-gauge__val { font-family: ui-monospace, monospace; font-size: 13px; text-align: right; }
+
+/* KPI - notes */
+.kpi-note { display: flex; align-items: center; gap: 32px; }
+.kpi-note__big {
+  font-size: 72px; font-weight: 400; line-height: 1; letter-spacing: -.04em;
+}
+.kpi-note__big span { font-size: 28px; opacity: .4; }
+.kpi-note__bars { display: flex; gap: 4px; flex: 1; }
+.kpi-note__bars span { flex: 1; height: 32px; border-radius: 2px; }
+
+/* KPI - feux */
+.kpi-feux { display: flex; align-items: center; gap: 16px; padding: 12px 0; }
+.kpi-feux .feu {
+  width: 48px; height: 48px; border-radius: 50%;
+  border: 2px solid rgba(0,0,0,.12);
+  transition: opacity .2s;
+  opacity: .25;
+}
+.kpi-feux .feu.is-on { opacity: 1; box-shadow: 0 0 0 4px rgba(0,0,0,.06); }
+.kpi-feux__label {
+  font-size: 18px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase;
+  margin-left: 16px;
+}
+
+/* ───── Conseil ───── */
+.conseil { max-width: 1100px; margin: 0 auto; padding: 64px 32px; }
+.conseil__intro { font-size: 17px; opacity: .75; max-width: 720px; margin: 0 0 32px; line-height: 1.6; }
+.conseil__filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+
+.conseil__scope {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 12px; margin-bottom: 24px;
+}
+.conseil__scope-btn {
+  text-align: left;
+  padding: 18px 22px;
+  background: transparent;
+  border: 1.5px solid rgba(0,0,0,.12);
+  border-radius: 4px;
+  transition: border-color .15s, background .15s;
+}
+.conseil__scope-btn:hover { background: rgba(0,0,0,.025); }
+.conseil__scope-btn.is-active { border-width: 1.5px; background: rgba(0,0,0,.025); }
+.conseil__scope-l {
+  font-size: 16px; font-weight: 600; letter-spacing: -.005em;
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 4px;
+}
+.conseil__scope-tag {
+  font-size: 10px; font-weight: 700; letter-spacing: .08em;
+  padding: 3px 7px; border-radius: 2px;
+  background: rgba(0,0,0,.08); color: rgba(0,0,0,.7);
+}
+.conseil__scope-s { font-size: 12px; opacity: .6; }
+
+.capca-notice {
+  padding: 16px 20px;
+  background: rgba(0,0,0,.025);
+  border-left: 3px solid var(--c-secondary);
+  border-radius: 2px;
+  font-size: 14px; line-height: 1.55;
+  margin-bottom: 24px;
+}
+.capca-notice strong { font-weight: 700; }
+.chip {
+  padding: 8px 14px; border-radius: 4px;
+  border: 1px solid rgba(0,0,0,.15); background: transparent;
+  font-size: 13px; font-weight: 500;
+}
+.chip:hover { background: rgba(0,0,0,.04); }
+.chip.is-active { font-weight: 600; }
+
+.docs-list { display: flex; flex-direction: column; gap: 0; border-top: 1px solid rgba(0,0,0,.08); }
+.doc-row {
+  display: grid; grid-template-columns: auto 1fr auto;
+  gap: 20px; align-items: center;
+  padding: 20px 4px;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  transition: background .15s;
+}
+.doc-row:hover { background: rgba(0,0,0,.025); padding-left: 12px; padding-right: 12px; }
+.doc-row__icon {
+  width: 48px; height: 56px;
+  border: 1.5px solid;
+  border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; letter-spacing: .04em;
+}
+.doc-row__type {
+  font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.doc-row__title { font-size: 17px; font-weight: 400; letter-spacing: -.005em; line-height: 1.3; }
+.doc-row__meta { font-size: 12px; opacity: .55; margin-top: 4px; }
+.doc-row__action { font-size: 13px; font-weight: 600; opacity: .7; }
+.doc-row:hover .doc-row__action { opacity: 1; }
+
+.conseil__next {
+  margin-top: 48px;
+  padding: 32px;
+  background: rgba(0,0,0,.025);
+  border-left: 3px solid var(--c-primary);
+  border-radius: 4px;
+}
+.conseil__next-label {
+  font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.conseil__next h3 { font-size: 24px; font-weight: 400; margin: 0 0 12px; letter-spacing: -.01em; }
+.conseil__next p { font-size: 15px; opacity: .75; margin: 0 0 20px; line-height: 1.5; }
+
+/* ───── Opposition ───── */
+.opposition { max-width: 1280px; margin: 0 auto; padding: 64px 32px; }
+.oppo__grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  margin-bottom: 56px;
+}
+.oppo-card { display: flex; flex-direction: column; gap: 12px; }
+.oppo-card__head { display: flex; align-items: center; justify-content: space-between; }
+.oppo-card__type {
+  font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 2px;
+}
+.oppo-card__date { font-size: 12px; opacity: .55; }
+.oppo-card h3 { font-size: 19px; font-weight: 400; margin: 0; line-height: 1.3; letter-spacing: -.005em; }
+.oppo-card p { font-size: 14px; opacity: .72; margin: 0; line-height: 1.55; }
+.oppo-card__foot { margin-top: auto; font-size: 13px; font-weight: 600; }
+
+.vote-record {
+  padding: 40px;
+  background: rgba(0,0,0,.025);
+  border-radius: 4px;
+}
+.vote-record h3 { font-size: 28px; font-weight: 400; margin: 0 0 8px; letter-spacing: -.01em; }
+.vote-record p { opacity: .75; margin: 0 0 24px; }
+.vote-bars { display: flex; flex-direction: column; gap: 16px; max-width: 720px; }
+.vote-bar__head { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px; }
+.vote-bar__head span:first-child { font-weight: 600; }
+.vote-bar__head span:last-child { opacity: .6; font-family: ui-monospace, monospace; }
+.vote-bar__track { height: 6px; background: rgba(0,0,0,.08); border-radius: 2px; overflow: hidden; }
+.vote-bar__track > div { height: 100%; transition: width .6s; }
+.vote-record__note { margin-top: 24px; font-size: 13px; font-style: italic; opacity: .7; }
+
+/* ───── Expression ───── */
+.expression { max-width: 980px; margin: 0 auto; padding: 64px 32px; }
+.expression__intro { font-size: 17px; opacity: .75; line-height: 1.6; margin: 0 0 32px; }
+.expression__tabs {
+  display: flex; gap: 0; border-bottom: 1px solid rgba(0,0,0,.1);
+  margin-bottom: 40px;
+}
+.expression__tab {
+  background: transparent; border: 0;
+  padding: 14px 22px;
+  font-size: 14px; font-weight: 500;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  color: rgba(0,0,0,.6);
+}
+.expression__tab.is-active { font-weight: 600; }
+
+.testimony-form {
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 32px;
+}
+.testimony-form textarea {
+  width: 100%; border: 0; outline: 0;
+  font-family: inherit; font-size: 15px;
+  resize: vertical; min-height: 80px;
+  background: transparent;
+}
+.testimony-form__row {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 12px; padding-top: 12px;
+  border-top: 1px solid rgba(0,0,0,.08);
+}
+.check { font-size: 13px; opacity: .75; display: flex; align-items: center; gap: 6px; }
+
+.testimonies { display: flex; flex-direction: column; gap: 20px; }
+.testimony {
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 4px; padding: 20px 24px;
+}
+.testimony__head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.testimony__avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 600;
+}
+.testimony__author { font-weight: 600; font-size: 14px; }
+.testimony__meta { font-size: 12px; opacity: .55; }
+.testimony p { font-size: 16px; line-height: 1.55; margin: 0 0 16px; font-style: italic; }
+.testimony__foot { display: flex; align-items: center; gap: 16px; }
+.testimony__vote {
+  background: transparent; border: 1px solid; padding: 6px 12px; border-radius: 2px;
+  font-size: 12px; font-weight: 600;
+}
+.testimony__reply { font-size: 12px; opacity: .6; }
+
+/* Idées */
+.ideas { display: flex; flex-direction: column; gap: 8px; }
+.ideas__form {
+  display: flex; gap: 12px; margin-bottom: 24px;
+}
+.ideas__form input {
+  flex: 1; border: 1px solid rgba(0,0,0,.15); border-radius: 4px;
+  padding: 12px 16px; font-family: inherit; font-size: 15px; outline: 0;
+}
+.idea-row {
+  display: grid; grid-template-columns: auto 1fr auto;
+  gap: 20px; align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+.idea-row__votes {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  min-width: 56px;
+}
+.idea-row__up {
+  width: 32px; height: 32px; border: 1px solid; background: transparent;
+  border-radius: 4px;
+}
+.idea-row__votes span { font-size: 18px; font-weight: 400; }
+.idea-row h4 { font-size: 16px; font-weight: 400; margin: 0 0 4px; }
+.idea-row__meta { font-size: 12px; opacity: .65; }
+.idea-row__more { font-size: 13px; font-weight: 600; }
+
+/* Contact */
+.contact { display: grid; grid-template-columns: 2fr 1fr; gap: 32px; }
+.contact__form { display: flex; flex-direction: column; gap: 14px; padding: 28px; }
+.contact__form h3 { font-size: 22px; font-weight: 400; margin: 0; letter-spacing: -.01em; }
+.contact__form p { font-size: 14px; opacity: .7; margin: 0 0 8px; }
+.contact__form label { display: flex; flex-direction: column; gap: 4px; font-size: 12px; opacity: .75; font-weight: 500; }
+.contact__form input, .contact__form select, .contact__form textarea {
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 4px; padding: 10px 14px;
+  font-family: inherit; font-size: 14px; outline: 0;
+  background: var(--c-paper);
+  color: var(--c-ink);
+}
+.contact__row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.contact__form .btn { align-self: flex-start; margin-top: 8px; }
+.contact__side { padding: 28px 0; }
+.contact__side h4 { font-size: 14px; margin: 0 0 6px; font-weight: 600; }
+.contact__side p { font-size: 14px; opacity: .75; margin: 0 0 20px; line-height: 1.55; }
+
+/* ───── Commune ───── */
+.commune { max-width: 1280px; margin: 0 auto; padding: 64px 32px; }
+.commune__hero {
+  display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px;
+  align-items: center; margin-bottom: 64px;
+}
+.commune__intro p { margin: 0 0 16px; opacity: .8; line-height: 1.6; }
+.commune__patrimoine { margin-bottom: 64px; }
+.commune__patrimoine h3, .commune__assos h3 {
+  font-size: 28px; font-weight: 400; margin: 0 0 24px; letter-spacing: -.01em;
+}
+.patrimoine-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+}
+.patrimoine-card { display: flex; flex-direction: column; gap: 8px; }
+.patrimoine-card__t { font-size: 16px; font-weight: 400; margin-top: 8px; }
+.patrimoine-card__d { font-size: 12px; opacity: .55; font-family: ui-monospace, monospace; }
+
+.commune__assos { margin-bottom: 64px; }
+.assos-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.asso-card h4 { font-size: 17px; font-weight: 400; margin: 0 0 4px; letter-spacing: -.005em; }
+.asso-card__focus { font-size: 12px; opacity: .55; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 14px; }
+.asso-card__next { font-size: 14px; font-weight: 500; }
+
+.commune__sondage {
+  border: 1.5px solid;
+  padding: 32px;
+}
+.sondage__head { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+.sondage__pill {
+  font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  padding: 6px 12px; border-radius: 2px;
+}
+.sondage__head h3 { font-size: 22px; font-weight: 400; margin: 0; letter-spacing: -.01em; }
+.sondage__opts { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+.sondage__opt {
+  position: relative;
+  background: rgba(0,0,0,.025);
+  border: 0;
+  padding: 14px 20px; border-radius: 4px;
+  display: flex; justify-content: space-between; align-items: center;
+  text-align: left; overflow: hidden;
+  cursor: pointer;
+}
+.sondage__opt-bar { position: absolute; left: 0; top: 0; bottom: 0; opacity: .15; transition: width .6s; }
+.sondage__opt-l { position: relative; z-index: 1; font-size: 14px; font-weight: 500; }
+.sondage__opt-pct { position: relative; z-index: 1; font-size: 18px; }
+.sondage__foot { font-size: 12px; opacity: .55; }
+
+/* ───── Nous ───── */
+.nous { max-width: 1100px; margin: 0 auto; padding: 64px 32px; }
+.nous__intro { font-size: 17px; opacity: .75; line-height: 1.6; max-width: 720px; margin: 0 0 48px; }
+.elus-grid { display: grid; grid-template-columns: minmax(0, 640px); gap: 24px; margin-bottom: 64px; }
+.elu-card {
+  display: grid; grid-template-columns: 160px 1fr; gap: 24px;
+  align-items: start;
+}
+.elu-card .placeholder { aspect-ratio: 3/4; margin-bottom: 0; min-height: 0; }
+.elu-card__body { display: flex; flex-direction: column; }
+.elu-card h3 { font-size: 22px; font-weight: 400; margin: 0 0 4px; letter-spacing: -.01em; }
+.elu-card__role { font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; margin-bottom: 12px; }
+.elu-card p { font-size: 15px; opacity: .8; margin: 0; font-style: italic; line-height: 1.5; }
+
+.charte {
+  padding: 40px;
+  background: rgba(0,0,0,.025);
+  border-radius: 4px;
+}
+.charte h3 { font-size: 22px; font-weight: 500; margin: 0 0 24px; letter-spacing: -.005em; }
+.charte__list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.charte__list li { display: flex; gap: 14px; align-items: flex-start; font-size: 14px; line-height: 1.55; }
+.charte__list span { font-size: 24px; line-height: 1; min-width: 36px; opacity: .9; }
+.charte__list b { display: block; margin-bottom: 4px; font-size: 14px; font-weight: 600; }
+.charte__list div { font-size: 14px; line-height: 1.55; opacity: .85; }
+
+/* ───── Newsletter ───── */
+.newsletter { padding: 64px 32px; }
+.newsletter__inner {
+  max-width: 1280px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; align-items: center;
+}
+.newsletter__kick { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; }
+.newsletter h2 { font-size: clamp(28px, 3vw, 40px); font-weight: 400; margin: 0 0 12px; letter-spacing: -.01em; line-height: 1.1; }
+.newsletter p { opacity: .65; margin: 0; font-size: 15px; line-height: 1.55; }
+.newsletter__form { display: flex; gap: 8px; }
+.newsletter__form input {
+  flex: 1; padding: 14px 18px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  color: inherit; font-family: inherit; font-size: 14px;
+  border-radius: 4px; outline: 0;
+}
+.newsletter__form input::placeholder { color: rgba(255,255,255,.4); }
+.newsletter__form button {
+  padding: 14px 22px;
+  border: 0; border-radius: 4px;
+  font-family: inherit; font-size: 14px; font-weight: 600;
+}
+
+/* ───── Footer ───── */
+.site-footer { padding: 48px 32px 24px; border-top: 1px solid rgba(0,0,0,.08); }
+.site-footer__inner {
+  max-width: 1280px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.5fr 2fr; gap: 48px;
+  margin-bottom: 32px;
+}
+.site-footer__about { font-size: 13px; opacity: .65; line-height: 1.55; max-width: 360px; margin-top: 8px; }
+.site-footer__cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.site-footer__cols h5 { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 12px; opacity: .65; }
+.site-footer__cols a { display: block; font-size: 13px; padding: 4px 0; opacity: .8; }
+.site-footer__cols a:hover { opacity: 1; color: var(--c-primary); }
+.site-footer__bottom {
+  max-width: 1280px; margin: 0 auto;
+  padding-top: 20px; border-top: 1px solid rgba(0,0,0,.08);
+  display: flex; justify-content: space-between;
+  font-size: 12px; opacity: .55;
+}
+
+/* Météo */
+.meteo-sect { max-width: 1100px; margin: 0 auto; padding: 64px 32px; }
+.meteo-sect__intro { font-size: 15px; opacity: .7; margin: 0 0 32px; line-height: 1.55; }
+.meteo-load, .meteo-err { padding: 24px; opacity: .65; font-size: 14px; }
+.meteo-now {
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 32px; padding: 32px; align-items: center;
+  margin-bottom: 40px;
+}
+.meteo-now__main { display: flex; align-items: center; gap: 24px; }
+.meteo-now__icon { font-size: 64px; line-height: 1; }
+.meteo-now__t { font-size: 64px; font-weight: 400; line-height: 1; letter-spacing: -.03em; }
+.meteo-now__t span { font-size: 28px; opacity: .5; margin-left: 4px; }
+.meteo-now__l { font-size: 14px; opacity: .7; margin-top: 6px; }
+.meteo-now__side { display: flex; gap: 24px; }
+.metric__l { font-size: 11px; opacity: .55; letter-spacing: .05em; text-transform: uppercase; margin-bottom: 4px; }
+.metric__v { font-size: 22px; font-weight: 400; }
+.meteo-fc__h { font-size: 22px; font-weight: 500; margin: 0 0 16px; letter-spacing: -.005em; }
+.meteo-fc { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-bottom: 32px; }
+.meteo-fc__d {
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 4px;
+  padding: 16px 8px;
+  text-align: center;
+}
+.meteo-fc__day { font-size: 12px; font-weight: 600; opacity: .65; margin-bottom: 8px; }
+.meteo-fc__icon { font-size: 28px; margin-bottom: 8px; line-height: 1; }
+.meteo-fc__t { font-size: 14px; }
+.meteo-fc__t b { font-weight: 600; margin-right: 6px; }
+.meteo-fc__t span { opacity: .5; }
+.meteo-fc__rain { font-size: 11px; opacity: .55; margin-top: 4px; font-family: ui-monospace, monospace; }
+.meteo-note {
+  font-size: 13px; line-height: 1.6; opacity: .7;
+  padding: 16px 20px;
+  background: rgba(0,0,0,.025);
+  border-left: 3px solid var(--c-secondary);
+  border-radius: 2px;
+}
+@media (max-width: 980px) {
+  .hero__grid, .commune__hero, .contact, .newsletter__inner, .site-footer__inner { grid-template-columns: 1fr; gap: 32px; }
+  .actus__grid, .oppo__grid, .elus-grid, .assos-list { grid-template-columns: 1fr; }
+  .patrimoine-grid { grid-template-columns: repeat(2, 1fr); }
+  .charte__list { grid-template-columns: 1fr; }
+  .site-nav { display: none; }
+  .hero__stats { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+// ─────────────────────────────────────────────────────────────────────────────
+// tweaks-panel — floating tweaks UI
+// ─────────────────────────────────────────────────────────────────────────────
+
+const __TWEAKS_STYLE = `
+  .twk-panel{position:fixed;right:16px;bottom:16px;z-index:2147483646;width:280px;
+    max-height:calc(100vh - 32px);display:flex;flex-direction:column;
+    transform:scale(var(--dc-inv-zoom,1));transform-origin:bottom right;
+    background:rgba(250,249,247,.78);color:#29261b;
+    -webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);
+    border:.5px solid rgba(255,255,255,.6);border-radius:14px;
+    box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 12px 40px rgba(0,0,0,.18);
+    font:11.5px/1.4 ui-sans-serif,system-ui,-apple-system,sans-serif;overflow:hidden}
+  .twk-hd{display:flex;align-items:center;justify-content:space-between;
+    padding:10px 8px 10px 14px;cursor:move;user-select:none}
+  .twk-hd b{font-size:12px;font-weight:600;letter-spacing:.01em}
+  .twk-x{appearance:none;border:0;background:transparent;color:rgba(41,38,27,.55);
+    width:22px;height:22px;border-radius:6px;cursor:default;font-size:13px;line-height:1}
+  .twk-x:hover{background:rgba(0,0,0,.06);color:#29261b}
+  .twk-body{padding:2px 14px 14px;display:flex;flex-direction:column;gap:10px;
+    overflow-y:auto;overflow-x:hidden;min-height:0;
+    scrollbar-width:thin;scrollbar-color:rgba(0,0,0,.15) transparent}
+  .twk-body::-webkit-scrollbar{width:8px}
+  .twk-body::-webkit-scrollbar-track{background:transparent;margin:2px}
+  .twk-body::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:4px;
+    border:2px solid transparent;background-clip:content-box}
+  .twk-body::-webkit-scrollbar-thumb:hover{background:rgba(0,0,0,.25);
+    border:2px solid transparent;background-clip:content-box}
+  .twk-row{display:flex;flex-direction:column;gap:5px}
+  .twk-row-h{flex-direction:row;align-items:center;justify-content:space-between;gap:10px}
+  .twk-lbl{display:flex;justify-content:space-between;align-items:baseline;
+    color:rgba(41,38,27,.72)}
+  .twk-lbl>span:first-child{font-weight:500}
+  .twk-val{color:rgba(41,38,27,.5);font-variant-numeric:tabular-nums}
+
+  .twk-sect{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(41,38,27,.45);padding:10px 0 0}
+  .twk-sect:first-child{padding-top:0}
+
+  .twk-field{appearance:none;width:100%;height:26px;padding:0 8px;
+    border:.5px solid rgba(0,0,0,.1);border-radius:7px;
+    background:rgba(255,255,255,.6);color:inherit;font:inherit;outline:none}
+  .twk-field:focus{border-color:rgba(0,0,0,.25);background:rgba(255,255,255,.85)}
+  select.twk-field{padding-right:22px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='rgba(0,0,0,.5)' d='M0 0h10L5 6z'/></svg>");
+    background-repeat:no-repeat;background-position:right 8px center}
+
+  .twk-seg{position:relative;display:flex;padding:2px;border-radius:8px;
+    background:rgba(0,0,0,.06);user-select:none}
+  .twk-seg-thumb{position:absolute;top:2px;bottom:2px;border-radius:6px;
+    background:rgba(255,255,255,.9);box-shadow:0 1px 2px rgba(0,0,0,.12);
+    transition:left .15s cubic-bezier(.3,.7,.4,1),width .15s}
+  .twk-seg.dragging .twk-seg-thumb{transition:none}
+  .twk-seg button{appearance:none;position:relative;z-index:1;flex:1;border:0;
+    background:transparent;color:inherit;font:inherit;font-weight:500;min-height:22px;
+    border-radius:6px;cursor:default;padding:4px 6px;line-height:1.2;
+    overflow-wrap:anywhere}
+
+  .twk-toggle{position:relative;width:32px;height:18px;border:0;border-radius:999px;
+    background:rgba(0,0,0,.15);transition:background .15s;cursor:default;padding:0}
+  .twk-toggle[data-on="1"]{background:#34c759}
+  .twk-toggle i{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;
+    background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .15s}
+  .twk-toggle[data-on="1"] i{transform:translateX(14px)}
+
+  .twk-chips{display:flex;gap:6px}
+  .twk-chip{position:relative;appearance:none;flex:1;min-width:0;height:46px;
+    padding:0;border:0;border-radius:6px;overflow:hidden;cursor:default;
+    box-shadow:0 0 0 .5px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.06);
+    transition:transform .12s cubic-bezier(.3,.7,.4,1),box-shadow .12s}
+  .twk-chip:hover{transform:translateY(-1px);
+    box-shadow:0 0 0 .5px rgba(0,0,0,.18),0 4px 10px rgba(0,0,0,.12)}
+  .twk-chip[data-on="1"]{box-shadow:0 0 0 1.5px rgba(0,0,0,.85),
+    0 2px 6px rgba(0,0,0,.15)}
+  .twk-chip>span{position:absolute;top:0;bottom:0;right:0;width:34%;
+    display:flex;flex-direction:column;box-shadow:-1px 0 0 rgba(0,0,0,.1)}
+  .twk-chip>span>i{flex:1;box-shadow:0 -1px 0 rgba(0,0,0,.1)}
+  .twk-chip>span>i:first-child{box-shadow:none}
+  .twk-chip svg{position:absolute;top:6px;left:6px;width:13px;height:13px;
+    filter:drop-shadow(0 1px 1px rgba(0,0,0,.3))}
+`;
+
+function useTweaks(defaults) {
+  const [values, setValues] = React.useState(defaults);
+  const setTweak = React.useCallback((keyOrEdits, val) => {
+    const edits = typeof keyOrEdits === 'object' && keyOrEdits !== null
+      ? keyOrEdits : { [keyOrEdits]: val };
+    setValues((prev) => ({ ...prev, ...edits }));
+    try { window.parent.postMessage({ type: '__edit_mode_set_keys', edits }, '*'); } catch (e) {}
+    window.dispatchEvent(new CustomEvent('tweakchange', { detail: edits }));
+  }, []);
+  return [values, setTweak];
+}
+
+function TweaksPanel({ title = 'Tweaks', children }) {
+  const [open, setOpen] = React.useState(false);
+  const dragRef = React.useRef(null);
+  const offsetRef = React.useRef({ x: 16, y: 16 });
+  const PAD = 16;
+
+  const clampToViewport = React.useCallback(() => {
+    const panel = dragRef.current;
+    if (!panel) return;
+    const w = panel.offsetWidth, h = panel.offsetHeight;
+    const maxRight = Math.max(PAD, window.innerWidth - w - PAD);
+    const maxBottom = Math.max(PAD, window.innerHeight - h - PAD);
+    offsetRef.current = {
+      x: Math.min(maxRight, Math.max(PAD, offsetRef.current.x)),
+      y: Math.min(maxBottom, Math.max(PAD, offsetRef.current.y)),
+    };
+    panel.style.right = offsetRef.current.x + 'px';
+    panel.style.bottom = offsetRef.current.y + 'px';
+  }, []);
+
+  React.useEffect(() => {
+    if (!open) return;
+    clampToViewport();
+    if (typeof ResizeObserver === 'undefined') {
+      window.addEventListener('resize', clampToViewport);
+      return () => window.removeEventListener('resize', clampToViewport);
+    }
+    const ro = new ResizeObserver(clampToViewport);
+    ro.observe(document.documentElement);
+    return () => ro.disconnect();
+  }, [open, clampToViewport]);
+
+  React.useEffect(() => {
+    const onMsg = (e) => {
+      const t = e?.data?.type;
+      if (t === '__activate_edit_mode') setOpen(true);
+      else if (t === '__deactivate_edit_mode') setOpen(false);
+    };
+    window.addEventListener('message', onMsg);
+    try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch (e) {}
+    return () => window.removeEventListener('message', onMsg);
+  }, []);
+
+  const dismiss = () => {
+    setOpen(false);
+    try { window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*'); } catch (e) {}
+  };
+
+  const onDragStart = (e) => {
+    const panel = dragRef.current;
+    if (!panel) return;
+    const r = panel.getBoundingClientRect();
+    const sx = e.clientX, sy = e.clientY;
+    const startRight = window.innerWidth - r.right;
+    const startBottom = window.innerHeight - r.bottom;
+    const move = (ev) => {
+      offsetRef.current = {
+        x: startRight - (ev.clientX - sx),
+        y: startBottom - (ev.clientY - sy),
+      };
+      clampToViewport();
+    };
+    const up = () => {
+      window.removeEventListener('mousemove', move);
+      window.removeEventListener('mouseup', up);
+    };
+    window.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', up);
+  };
+
+  if (!open) return null;
+  return (
+    <>
+      <style>{__TWEAKS_STYLE}</style>
+      <div ref={dragRef} className="twk-panel"
+           style={{ right: offsetRef.current.x, bottom: offsetRef.current.y }}>
+        <div className="twk-hd" onMouseDown={onDragStart}>
+          <b>{title}</b>
+          <button className="twk-x" aria-label="Close tweaks"
+                  onMouseDown={(e) => e.stopPropagation()}
+                  onClick={dismiss}>✕</button>
+        </div>
+        <div className="twk-body">{children}</div>
+      </div>
+    </>
+  );
+}
+
+function TweakSection({ label, children }) {
+  return (<>
+    <div className="twk-sect">{label}</div>
+    {children}
+  </>);
+}
+
+function TweakRow({ label, value, children, inline = false }) {
+  return (
+    <div className={inline ? 'twk-row twk-row-h' : 'twk-row'}>
+      <div className="twk-lbl">
+        <span>{label}</span>
+        {value != null && <span className="twk-val">{value}</span>}
+      </div>
+      {children}
+    </div>
+  );
+}
+
+function TweakRadio({ label, value, options, onChange }) {
+  const trackRef = React.useRef(null);
+  const [dragging, setDragging] = React.useState(false);
+  const valueRef = React.useRef(value);
+  valueRef.current = value;
+
+  const labelLen = (o) => String(typeof o === 'object' ? o.label : o).length;
+  const maxLen = options.reduce((m, o) => Math.max(m, labelLen(o)), 0);
+  const fitsAsSegments = maxLen <= ({ 2: 16, 3: 10 }[options.length] ?? 0);
+  if (!fitsAsSegments) {
+    const resolve = (s) => {
+      const m = options.find((o) => String(typeof o === 'object' ? o.value : o) === s);
+      return m === undefined ? s : typeof m === 'object' ? m.value : m;
+    };
+    return <TweakSelect label={label} value={value} options={options}
+                        onChange={(s) => onChange(resolve(s))} />;
+  }
+  const opts = options.map((o) => (typeof o === 'object' ? o : { value: o, label: o }));
+  const idx = Math.max(0, opts.findIndex((o) => o.value === value));
+  const n = opts.length;
+
+  const segAt = (clientX) => {
+    const r = trackRef.current.getBoundingClientRect();
+    const inner = r.width - 4;
+    const i = Math.floor(((clientX - r.left - 2) / inner) * n);
+    return opts[Math.max(0, Math.min(n - 1, i))].value;
+  };
+
+  const onPointerDown = (e) => {
+    setDragging(true);
+    const v0 = segAt(e.clientX);
+    if (v0 !== valueRef.current) onChange(v0);
+    const move = (ev) => {
+      if (!trackRef.current) return;
+      const v = segAt(ev.clientX);
+      if (v !== valueRef.current) onChange(v);
+    };
+    const up = () => {
+      setDragging(false);
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('pointerup', up);
+    };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up);
+  };
+
+  return (
+    <TweakRow label={label}>
+      <div ref={trackRef} role="radiogroup" onPointerDown={onPointerDown}
+           className={dragging ? 'twk-seg dragging' : 'twk-seg'}>
+        <div className="twk-seg-thumb"
+             style={{ left: `calc(2px + ${idx} * (100% - 4px) / ${n})`,
+                      width: `calc((100% - 4px) / ${n})` }} />
+        {opts.map((o) => (
+          <button key={o.value} type="button" role="radio" aria-checked={o.value === value}>
+            {o.label}
+          </button>
+        ))}
+      </div>
+    </TweakRow>
+  );
+}
+
+function TweakSelect({ label, value, options, onChange }) {
+  return (
+    <TweakRow label={label}>
+      <select className="twk-field" value={value} onChange={(e) => onChange(e.target.value)}>
+        {options.map((o) => {
+          const v = typeof o === 'object' ? o.value : o;
+          const l = typeof o === 'object' ? o.label : o;
+          return <option key={v} value={v}>{l}</option>;
+        })}
+      </select>
+    </TweakRow>
+  );
+}
+
+function __twkIsLight(hex) {
+  const h = String(hex).replace('#', '');
+  const x = h.length === 3 ? h.replace(/./g, (c) => c + c) : h.padEnd(6, '0');
+  const n = parseInt(x.slice(0, 6), 16);
+  if (Number.isNaN(n)) return true;
+  const r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+  return r * 299 + g * 587 + b * 114 > 148000;
+}
+
+const __TwkCheck = ({ light }) => (
+  <svg viewBox="0 0 14 14" aria-hidden="true">
+    <path d="M3 7.2 5.8 10 11 4.2" fill="none" strokeWidth="2.2"
+          strokeLinecap="round" strokeLinejoin="round"
+          stroke={light ? 'rgba(0,0,0,.78)' : '#fff'} />
+  </svg>
+);
+
+function TweakColor({ label, value, options, onChange }) {
+  const key = (o) => String(JSON.stringify(o)).toLowerCase();
+  const cur = key(value);
+  return (
+    <TweakRow label={label}>
+      <div className="twk-chips" role="radiogroup">
+        {options.map((o, i) => {
+          const colors = Array.isArray(o) ? o : [o];
+          const [hero, ...rest] = colors;
+          const sup = rest.slice(0, 4);
+          const on = key(o) === cur;
+          return (
+            <button key={i} type="button" className="twk-chip" role="radio"
+                    aria-checked={on} data-on={on ? '1' : '0'}
+                    aria-label={colors.join(', ')} title={colors.join(' · ')}
+                    style={{ background: hero }}
+                    onClick={() => onChange(o)}>
+              {sup.length > 0 && (
+                <span>
+                  {sup.map((c, j) => <i key={j} style={{ background: c }} />)}
+                </span>
+              )}
+              {on && <__TwkCheck light={__twkIsLight(hero)} />}
+            </button>
+          );
+        })}
+      </div>
+    </TweakRow>
+  );
+}
+
+Object.assign(window, {
+  useTweaks, TweaksPanel, TweakSection, TweakRow,
+  TweakRadio, TweakSelect, TweakColor,
+});
+</script>
+
+<script type="text/babel">
+// ─────────────────────────────────────────────────────────────────────────────
+// Site de l'opposition municipale de Freyssenet
+// ─────────────────────────────────────────────────────────────────────────────
+
+const { useState, useEffect, useRef, useMemo } = React;
+
+const TWEAK_DEFAULTS = {
+  "palette": ["#8b2635", "#4a5d3a", "#1a1a1a", "#fafaf7"],
+  "headingFont": "Instrument Serif",
+  "bodyFont": "Public Sans",
+  "kpiFormat": "jauges",
+  "cardStyle": "bordered",
+  "tone": "engage"
+};
+
+// ───── DATA ─────
+const ELUS = [
+  { name: "[À compléter — votre nom]", role: "Conseiller municipal d'opposition", quote: "Mon rôle : porter la voix de tous les habitants, pas seulement celle d'une majorité. La transparence n'est pas une option, c'est un devoir.", initials: "—" },
+];
+
+const ACTUS = [
+  { tag: "Tribune", date: "28 avril 2026", title: "Budget 2026 : nos alertes sur l'endettement communal", excerpt: "Le budget voté ce mois-ci passe sous silence un endettement par habitant qui a doublé en trois ans. Décryptage et propositions alternatives." },
+  { tag: "Conseil", date: "22 avril 2026", title: "Compte-rendu du conseil du 18 avril", excerpt: "Cinq délibérations contestées, un vote sur la cession d'un bien communal sans estimation des Domaines, et nos questions restées sans réponse." },
+  { tag: "Patrimoine", date: "15 avril 2026", title: "La chapelle Saint-Roch toujours en péril", excerpt: "Quatre ans après notre première alerte, les travaux de mise hors d'eau n'ont toujours pas été engagés. Photos et chiffrage à l'appui." },
+  { tag: "Démocratie", date: "08 avril 2026", title: "Pour un référendum communal sur l'éolien", excerpt: "Nous demandons une consultation officielle des Freyssenetois avant toute signature avec les opérateurs." },
+];
+
+const KPIS_2020 = [
+  { theme: "Routes & chemins", promesse: "Réfection complète de 12 km de voirie communale d'ici 2026", realise: 35, statut: "retard", detail: "4,2 km réalisés sur 12 km promis. Plusieurs chemins ruraux signalés en 2023 toujours non traités." },
+  { theme: "Patrimoine bâti", promesse: "Sauvegarder la chapelle, le lavoir et le four banal", realise: 15, statut: "alerte", detail: "Seul le lavoir a fait l'objet d'un nettoyage. Aucune étude diagnostic engagée sur la chapelle." },
+  { theme: "Vivre ensemble", promesse: "Créer un espace de rencontre intergénérationnel", realise: 60, statut: "encours", detail: "Salle polyvalente rénovée mais peu d'animations programmées. Conseil des anciens jamais réuni." },
+  { theme: "Finances communales", promesse: "Maintenir une fiscalité stable sans nouvel emprunt", realise: 20, statut: "alerte", detail: "Hausse de 8% de la taxe foncière en 2025. Nouvel emprunt de 240k€ contracté en juin." },
+  { theme: "Écologie & transition", promesse: "Plan énergie communal et réduction de 30% des consommations", realise: 25, statut: "retard", detail: "Aucun audit énergétique réalisé. Éclairage public encore au sodium sur 70% du réseau." },
+  { theme: "Probité & déontologie", promesse: "Charte de l'élu et registre public des déports", realise: 0, statut: "alerte", detail: "Aucune charte signée. Trois délibérations votées sans déport sur conflit d'intérêt apparent." },
+  { theme: "Transparence", promesse: "Diffusion en direct et publication des PV sous 15 jours", realise: 45, statut: "encours", detail: "PV publiés mais avec 6 à 8 semaines de retard. Pas de diffusion vidéo." },
+  { theme: "Démocratie participative", promesse: "Budget participatif et consultations citoyennes", realise: 10, statut: "alerte", detail: "Une seule réunion publique en 4 ans. Aucun budget participatif mis en place." },
+];
+
+const KPIS_2026 = [
+  { theme: "Routes & chemins", promesse: "Achever les 8 km de voirie restants et entretenir les chemins ruraux", realise: 5, statut: "encours", detail: "Mandat débuté en mars 2026. Diagnostic en cours sur l'ensemble du réseau. Premiers chantiers programmés à l'automne." },
+  { theme: "Patrimoine bâti", promesse: "Lancer l'étude de sauvegarde de la chapelle Saint-Roch sous 12 mois", realise: 10, statut: "encours", detail: "Premières prises de contact avec la DRAC. Subvention sollicitée auprès du Département. Nous suivrons mois après mois." },
+  { theme: "Vivre ensemble", promesse: "Réunir le conseil des anciens et créer un comité des fêtes intergénérationnel", realise: 0, statut: "alerte", detail: "Aucune initiative annoncée à ce stade. Nous attendons l'inscription au prochain conseil." },
+  { theme: "Finances communales", promesse: "Présenter chaque année un débat d'orientation budgétaire ouvert au public", realise: 0, statut: "encours", detail: "Premier DOB attendu en novembre 2026. Nous avons proposé qu'il se tienne en réunion publique." },
+  { theme: "Écologie & transition", promesse: "Audit énergétique communal et passage de l'éclairage public en LED", realise: 0, statut: "alerte", detail: "Aucun calendrier annoncé. Notre proposition d'audit gratuit via le SDE 07 est restée sans réponse." },
+  { theme: "Probité & déontologie", promesse: "Adopter une charte de l'élu dès la première séance du mandat", realise: 0, statut: "alerte", detail: "Texte que nous avons proposé non inscrit à l'ordre du jour de la séance d'installation." },
+  { theme: "Transparence", promesse: "Diffuser le conseil municipal en direct vidéo et publier les PV sous 15 jours", realise: 25, statut: "encours", detail: "Captation audio mise en place dès avril. La diffusion vidéo reste à organiser." },
+  { theme: "Démocratie participative", promesse: "Mettre en place un budget participatif annuel de 5 000 €", realise: 0, statut: "encours", detail: "Engagement réaffirmé par la majorité. Première édition annoncée pour 2027." },
+];
+
+const MANDATS = {
+  "2020": { kpis: KPIS_2020, label: "Mandat 2020 — 2026", sub: "Bilan complet · achevé en mars 2026", source: "Sources : programme 2020, délibérations, comptes administratifs, observations de terrain." },
+  "2026": { kpis: KPIS_2026, label: "Mandat 2026 — 2032", sub: "En cours · suivi mois après mois", source: "Sources : programme 2026 de la liste majoritaire, déclarations en conseil, premières délibérations." },
+};
+
+const DOCS_CAPCA = [
+  { type: "Convocation", date: "05 mai 2026", title: "Conseil communautaire CAPCA du 14 mai 2026", size: "PDF · 196 Ko" },
+  { type: "Ordre du jour", date: "05 mai 2026", title: "Séance du 14 mai 2026 — 22 délibérations", size: "PDF · 142 Ko" },
+  { type: "Procès-verbal", date: "20 avril 2026", title: "Conseil communautaire du 9 avril 2026", size: "PDF · 1,4 Mo" },
+  { type: "Compte-rendu", date: "20 avril 2026", title: "Synthèse du conseil du 9 avril 2026", size: "PDF · 312 Ko" },
+  { type: "Délibération", date: "09 avril 2026", title: "DCC 2026-047 — Plan climat-air-énergie territorial", size: "PDF · 2,8 Mo" },
+  { type: "Procès-verbal", date: "12 mars 2026", title: "Conseil communautaire du 5 mars 2026", size: "PDF · 1,1 Mo" },
+  { type: "Rapport", date: "01 mars 2026", title: "Rapport d'activité CAPCA 2025", size: "PDF · 4,2 Mo" },
+];
+
+const DOCS_CONSEIL = [
+  { type: "Convocation", date: "12 mai 2026", title: "Conseil municipal du 20 mai 2026", size: "PDF · 124 Ko" },
+  { type: "Ordre du jour", date: "12 mai 2026", title: "Séance du 20 mai 2026 — 9 délibérations", size: "PDF · 88 Ko" },
+  { type: "Procès-verbal", date: "30 avril 2026", title: "Séance du 18 avril 2026", size: "PDF · 412 Ko" },
+  { type: "Délibération", date: "18 avril 2026", title: "DCM 2026-018 — Cession parcelle B 247", size: "PDF · 156 Ko" },
+  { type: "Procès-verbal", date: "22 mars 2026", title: "Séance du 14 mars 2026", size: "PDF · 388 Ko" },
+  { type: "Budget", date: "08 mars 2026", title: "Budget primitif 2026 — annexes complètes", size: "PDF · 2,1 Mo" },
+];
+
+const DOCS_OPPO = [
+  { type: "Tribune", date: "28 avril", title: "Budget 2026 : nos alertes", excerpt: "Analyse ligne à ligne du budget voté." },
+  { type: "Question écrite", date: "20 avril", title: "Sur la cession de la parcelle B 247", excerpt: "Demande d'estimation des Domaines préalable." },
+  { type: "Vœu", date: "14 mars", title: "Pour la sauvegarde de la chapelle Saint-Roch", excerpt: "Texte rejeté par 7 voix contre 3." },
+  { type: "Proposition", date: "10 février", title: "Charte de l'élu et registre des déports", excerpt: "Texte type proposé, non inscrit à l'ordre du jour." },
+  { type: "Amendement", date: "18 janvier", title: "Sur le règlement intérieur du conseil", excerpt: "Garantir le temps de parole de l'opposition." },
+];
+
+const ASSOS = [
+  { name: "Les Amis de Freyssenet", focus: "Patrimoine & histoire locale", next: "Visite guidée du four banal — 14 mai" },
+  { name: "Comité des fêtes", focus: "Animations & festivités", next: "Vide-greniers de printemps — 25 mai" },
+  { name: "Foyer rural", focus: "Activités sportives & culturelles", next: "Tournoi de pétanque — 1ᵉʳ juin" },
+  { name: "Société de chasse", focus: "Régulation & nature", next: "Battue collective — 8 juin" },
+  { name: "Club du 3ᵉ âge", focus: "Lien social & sorties", next: "Sortie en Drôme — 22 mai" },
+];
+
+const TEMOIGNAGES = [
+  { author: "Bernadette L.", lieu: "Hameau du Cluzel", date: "il y a 2 jours", votes: 11, text: "Le chemin qui mène chez nous est impraticable depuis l'hiver dernier. Trois courriers en mairie, aucune réponse. Heureusement qu'il y a ce site pour qu'on nous entende." },
+  { author: "Pascal D.", lieu: "Bourg", date: "il y a 4 jours", votes: 16, text: "Pourquoi le compte-rendu du conseil de mars n'est-il toujours pas affiché en mairie ? On parle de transparence mais dans les faits..." },
+  { author: "Anonyme", lieu: "Freyssenet", date: "il y a 1 semaine", votes: 22, text: "J'aimerais qu'on parle vraiment du devenir de la salle communale. Les chiffres sont là : si on ne fait rien, elle se dégradera irrémédiablement." },
+];
+
+const IDEES = [
+  { title: "Créer un marché de producteurs locaux", auteur: "Hélène M.", votes: 18, statut: "Très soutenue" },
+  { title: "Installer des bancs sur le chemin de la Croix", auteur: "Robert T.", votes: 12, statut: "Soutenue" },
+  { title: "Diffuser le conseil municipal en vidéo", auteur: "Collectif citoyen", votes: 27, statut: "Très soutenue" },
+  { title: "Sentier d'interprétation du patrimoine", auteur: "Jeanne P.", votes: 9, statut: "À débattre" },
+];
+
+// ───── HELPERS ─────
+function statutColor(statut, palette) {
+  if (statut === "ok") return palette[1];
+  if (statut === "encours") return "#c9a227";
+  if (statut === "retard") return "#d97706";
+  return palette[0];
+}
+function statutLabel(statut) {
+  return { ok: "Tenu", encours: "En cours", retard: "En retard", alerte: "Non tenu" }[statut];
+}
+
+// ───── COMPONENTS ─────
+function BrandMark({ size = 48 }) {
+  return (
+    <img src="project/logo.png" alt="Freyssenet" className="brand-mark"
+      style={{ width: size, height: size, objectFit: "contain", display: "block", flexShrink: 0 }} />
+  );
+}
+
+function Header({ section, setSection, palette, headingFont }) {
+  const items = [
+    ["accueil", "Accueil"],
+    ["conseil", "Conseil municipal"],
+    ["bilan", "Bilan de la majorité"],
+    ["opposition", "Mon action"],
+    ["expression", "Vous avez la parole"],
+    ["commune", "Notre commune"],
+    ["meteo", "Météo"],
+    ["nous", "Qui sommes-nous"],
+  ];
+  return (
+    <header className="site-header">
+      <div className="site-header__inner">
+        <a href="#" onClick={(e) => { e.preventDefault(); setSection("accueil"); }} className="site-brand">
+          <BrandMark />
+          <div className="site-brand__text">
+            <div className="site-brand__name" style={{ fontFamily: headingFont }}>Freyssenet Ensemble</div>
+            <div className="site-brand__sub">L'avenir à construire ensemble</div>
+          </div>
+        </a>
+        <nav className="site-nav">
+          {items.map(([k, l]) => (
+            <button key={k} onClick={() => setSection(k)}
+              className={"site-nav__item " + (section === k ? "is-active" : "")}
+              style={section === k ? { color: palette[0] } : {}}>
+              {l}
+              {section === k && <span className="site-nav__bar" style={{ background: palette[0] }} />}
+            </button>
+          ))}
+        </nav>
+        <button className="site-cta" style={{ background: palette[2], color: palette[3] }}
+          onClick={() => setSection("expression")}>
+          Nous écrire →
+        </button>
+      </div>
+    </header>
+  );
+}
+
+function Hero({ palette, headingFont, setSection, tone }) {
+  const titre = "Freyssenet, l'avenir à construire ensemble.";
+  const intro = tone === "engage"
+    ? "46 habitants, une voix qui compte. Nous publions ici tous les documents du conseil municipal, nos analyses, nos propositions, et nous donnons la parole à ceux que la majorité préfère ne pas entendre."
+    : "46 habitants, une commune à faire vivre. Nous mettons à disposition les documents du conseil, nos travaux et un espace d'expression ouvert à tous les Freyssenetois.";
+  return (
+    <section className="hero">
+      <div className="hero__grid">
+        <div className="hero__left">
+          <div className="hero__eyebrow" style={{ color: palette[0] }}>
+            <span className="hero__pulse" style={{ background: palette[0] }} />
+            Édition du 8 mai 2026 · 46 habitants · Ardèche
+          </div>
+          <h1 className="hero__title" style={{ fontFamily: headingFont, color: palette[2] }}>
+            {titre}
+          </h1>
+          <p className="hero__lead">{intro}</p>
+          <div className="hero__cta">
+            <button className="btn btn--primary" style={{ background: palette[0] }} onClick={() => setSection("bilan")}>
+              Voir le bilan de la majorité
+            </button>
+            <button className="btn btn--ghost" onClick={() => setSection("conseil")}>
+              Consulter les documents →
+            </button>
+          </div>
+          <div className="hero__stats">
+            <Stat n="48" l="délibérations suivies" palette={palette} headingFont={headingFont} />
+            <Stat n="12" l="tribunes publiées" palette={palette} headingFont={headingFont} />
+            <Stat n="38" l="contributions citoyennes" palette={palette} headingFont={headingFont} />
+            <Stat n="1/7" l="élu d'opposition" palette={palette} headingFont={headingFont} />
+          </div>
+        </div>
+        <div className="hero__right">
+          <div className="hero__photo">
+            <img src="project/village.jpg" alt="Vue ancienne du village de Freyssenet-en-Coiron" />
+          </div>
+          <div className="hero__caption">
+            « Freyssenet-en-Coiron — un village dans l'intérieur d'un cirque de prairies, que des géologues disent être le cratère d'un volcan. »<br />
+            <span style={{ opacity: .6 }}>— Carte postale, vers 1906</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Stat({ n, l, palette, headingFont }) {
+  return (
+    <div className="stat">
+      <div className="stat__n" style={{ fontFamily: headingFont, color: palette[0] }}>{n}</div>
+      <div className="stat__l">{l}</div>
+    </div>
+  );
+}
+
+function SectionTitle({ kicker, title, palette, headingFont }) {
+  return (
+    <div className="sect-title">
+      <div className="sect-title__kicker" style={{ color: palette[0] }}>
+        <span className="sect-title__line" style={{ background: palette[0] }} /> {kicker}
+      </div>
+      <h2 style={{ fontFamily: headingFont, color: palette[2] }}>{title}</h2>
+    </div>
+  );
+}
+
+function Actus({ palette, headingFont }) {
+  return (
+    <section className="actus">
+      <SectionTitle kicker="À la une" title="Nos dernières publications" palette={palette} headingFont={headingFont} />
+      <div className="actus__grid">
+        {ACTUS.map((a, i) => (
+          <article key={i} className={"card actu " + (i === 0 ? "actu--featured" : "")}>
+            <div className="actu__meta">
+              <span className="actu__tag" style={{ color: palette[0], borderColor: palette[0] }}>{a.tag}</span>
+              <span className="actu__date">{a.date}</span>
+            </div>
+            <h3 style={{ fontFamily: headingFont, color: palette[2] }}>{a.title}</h3>
+            <p>{a.excerpt}</p>
+            <a className="actu__more" style={{ color: palette[0] }}>Lire la suite →</a>
+            {i === 0 && (
+              <div className="actu__hero placeholder">
+                <div className="placeholder__label">photo · illustration tribune</div>
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function KPI({ palette, headingFont, format }) {
+  const [mandat, setMandat] = useState("2020");
+  const m = MANDATS[mandat];
+  return (
+    <section className="bilan">
+      <SectionTitle kicker={"Bilan de la majorité — " + m.label.toLowerCase()}
+        title="Promesses tenues, promesses oubliées." palette={palette} headingFont={headingFont} />
+
+      <div className="mandat-switch">
+        {Object.entries(MANDATS).map(([k, v]) => (
+          <button key={k}
+            className={"mandat-switch__btn " + (mandat === k ? "is-active" : "")}
+            onClick={() => setMandat(k)}
+            style={mandat === k ? { borderColor: palette[0], color: palette[0] } : {}}>
+            <div className="mandat-switch__l" style={{ fontFamily: headingFont }}>{v.label}</div>
+            <div className="mandat-switch__s">{v.sub}</div>
+          </button>
+        ))}
+      </div>
+
+      <p className="bilan__intro">
+        Notre méthode : pour chaque engagement public de la majorité, nous mesurons l'écart entre la promesse et la réalisation effective au {new Date().toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}. {m.source}
+      </p>
+
+      <div className="bilan__legend">
+        <LegendItem c={palette[1]} l="Tenu (≥80%)" />
+        <LegendItem c="#c9a227" l="En cours (50–79%)" />
+        <LegendItem c="#d97706" l="En retard (20–49%)" />
+        <LegendItem c={palette[0]} l="Non tenu (<20%)" />
+      </div>
+
+      <div className="bilan__list">
+        {m.kpis.map((k, i) => (
+          <KPICard key={mandat + i} k={k} palette={palette} headingFont={headingFont} format={format} idx={i} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function LegendItem({ c, l }) {
+  return <div className="legend-item"><span style={{ background: c }} /> {l}</div>;
+}
+
+function KPICard({ k, palette, headingFont, format, idx }) {
+  const color = statutColor(k.statut, palette);
+  return (
+    <article className="kpi-card">
+      <div className="kpi-card__head">
+        <div className="kpi-card__num" style={{ fontFamily: headingFont, color: palette[0] }}>
+          {String(idx + 1).padStart(2, "0")}
+        </div>
+        <div className="kpi-card__title">
+          <h3 style={{ fontFamily: headingFont, color: palette[2] }}>{k.theme}</h3>
+          <p>« {k.promesse} »</p>
+        </div>
+        <div className="kpi-card__badge" style={{ color, borderColor: color }}>
+          {statutLabel(k.statut)}
+        </div>
+      </div>
+
+      {format === "jauges" && (
+        <div className="kpi-gauge">
+          <div className="kpi-gauge__row">
+            <span>Promesse</span>
+            <div className="kpi-gauge__bar"><div style={{ width: "100%", background: "rgba(0,0,0,.12)" }} /></div>
+            <span className="kpi-gauge__val">100%</span>
+          </div>
+          <div className="kpi-gauge__row">
+            <span>Réalisé</span>
+            <div className="kpi-gauge__bar"><div style={{ width: `${k.realise}%`, background: color }} /></div>
+            <span className="kpi-gauge__val" style={{ color, fontWeight: 600 }}>{k.realise}%</span>
+          </div>
+        </div>
+      )}
+
+      {format === "notes" && (
+        <div className="kpi-note">
+          <div className="kpi-note__big" style={{ fontFamily: headingFont, color }}>
+            {Math.round(k.realise / 10)}<span>/10</span>
+          </div>
+          <div className="kpi-note__bars">
+            {[...Array(10)].map((_, i) => (
+              <span key={i} style={{ background: i < Math.round(k.realise / 10) ? color : "rgba(0,0,0,.08)" }} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {format === "feux" && (
+        <div className="kpi-feux">
+          <div className={"feu " + (k.statut === "ok" ? "is-on" : "")} style={{ background: k.statut === "ok" ? palette[1] : "rgba(0,0,0,.08)" }} />
+          <div className={"feu " + (k.statut === "encours" || k.statut === "retard" ? "is-on" : "")} style={{ background: (k.statut === "encours" || k.statut === "retard") ? "#d97706" : "rgba(0,0,0,.08)" }} />
+          <div className={"feu " + (k.statut === "alerte" ? "is-on" : "")} style={{ background: k.statut === "alerte" ? palette[0] : "rgba(0,0,0,.08)" }} />
+          <div className="kpi-feux__label" style={{ color }}>{statutLabel(k.statut)}</div>
+        </div>
+      )}
+
+      <p className="kpi-card__detail">{k.detail}</p>
+    </article>
+  );
+}
+
+function Conseil({ palette, headingFont }) {
+  const [scope, setScope] = useState("municipal");
+  const docs = scope === "municipal" ? DOCS_CONSEIL : DOCS_CAPCA;
+  return (
+    <section className="conseil">
+      <SectionTitle kicker="Documents officiels" title="Tous les documents des conseils." palette={palette} headingFont={headingFont} />
+      <p className="conseil__intro">
+        Convocations, ordres du jour, procès-verbaux, délibérations et budgets : tout ce qui devrait être public, l'est ici. Les documents sont publiés dès leur réception, sans filtre.
+      </p>
+
+      <div className="conseil__scope">
+        <button
+          className={"conseil__scope-btn " + (scope === "municipal" ? "is-active" : "")}
+          onClick={() => setScope("municipal")}
+          style={scope === "municipal" ? { borderColor: palette[0], color: palette[0] } : {}}>
+          <div className="conseil__scope-l">Conseil municipal</div>
+          <div className="conseil__scope-s">Commune de Freyssenet · 7 conseillers</div>
+        </button>
+        <button
+          className={"conseil__scope-btn " + (scope === "capca" ? "is-active" : "")}
+          onClick={() => setScope("capca")}
+          style={scope === "capca" ? { borderColor: palette[0], color: palette[0] } : {}}>
+          <div className="conseil__scope-l">Conseil communautaire <span className="conseil__scope-tag">CAPCA</span></div>
+          <div className="conseil__scope-s">Communauté d'Agglomération Privas Centre Ardèche</div>
+        </button>
+      </div>
+
+      {scope === "capca" && (
+        <div className="capca-notice">
+          <strong>À propos de la CAPCA</strong> — La Communauté d'Agglomération Privas Centre Ardèche regroupe 42 communes dont Freyssenet. Elle exerce des compétences essentielles pour notre quotidien : eau, assainissement, déchets, urbanisme, mobilités, développement économique. Trop souvent ignorée des habitants, c'est pourtant là que se prennent des décisions qui nous touchent directement.
+        </div>
+      )}
+
+      <div className="conseil__filters">
+        {["Tout", "Convocations", "Ordres du jour", "Procès-verbaux", "Délibérations", scope === "capca" ? "Rapports" : "Budgets"].map((f, i) => (
+          <button key={f} className={"chip " + (i === 0 ? "is-active" : "")}
+            style={i === 0 ? { background: palette[2], color: palette[3], borderColor: palette[2] } : {}}>{f}</button>
+        ))}
+      </div>
+
+      <div className="docs-list">
+        {docs.map((d, i) => (
+          <a key={i} className="doc-row">
+            <div className="doc-row__icon" style={{ borderColor: palette[0], color: palette[0] }}>PDF</div>
+            <div className="doc-row__main">
+              <div className="doc-row__type" style={{ color: palette[0] }}>{d.type}</div>
+              <div className="doc-row__title" style={{ fontFamily: headingFont }}>{d.title}</div>
+              <div className="doc-row__meta">{d.date} · {d.size}</div>
+            </div>
+            <div className="doc-row__action">Télécharger ↓</div>
+          </a>
+        ))}
+      </div>
+
+      <div className="conseil__next">
+        <div className="conseil__next-label" style={{ color: palette[0] }}>
+          {scope === "municipal" ? "Prochaine séance — Conseil municipal" : "Prochaine séance — Conseil communautaire CAPCA"}
+        </div>
+        <h3 style={{ fontFamily: headingFont }}>
+          {scope === "municipal"
+            ? "Mercredi 20 mai 2026 · 20h00 · Salle du conseil"
+            : "Jeudi 14 mai 2026 · 18h30 · Siège CAPCA, Privas"}
+        </h3>
+        <p>
+          {scope === "municipal"
+            ? "Séance publique. 9 délibérations à l'ordre du jour, dont la révision du PLU et la subvention 2026 aux associations."
+            : "Séance publique. 22 délibérations dont le vote du budget supplémentaire et le schéma directeur d'assainissement intercommunal."}
+        </p>
+        <button className="btn btn--ghost">Ajouter à mon agenda →</button>
+      </div>
+    </section>
+  );
+}
+
+function Opposition({ palette, headingFont }) {
+  return (
+    <section className="opposition">
+      <SectionTitle kicker="Mon action au conseil" title="Tribunes, propositions, votes : ce que je porte." palette={palette} headingFont={headingFont} />
+      <div className="oppo__grid">
+        {DOCS_OPPO.map((d, i) => (
+          <article key={i} className="card oppo-card">
+            <div className="oppo-card__head">
+              <span className="oppo-card__type" style={{ background: palette[0], color: palette[3] }}>{d.type}</span>
+              <span className="oppo-card__date">{d.date} 2026</span>
+            </div>
+            <h3 style={{ fontFamily: headingFont }}>{d.title}</h3>
+            <p>{d.excerpt}</p>
+            <div className="oppo-card__foot">
+              <a style={{ color: palette[0] }}>Lire le texte →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div className="vote-record">
+        <h3 style={{ fontFamily: headingFont, color: palette[2] }}>Notre registre de vote</h3>
+        <p>Sur les 48 délibérations soumises au conseil depuis le début du mandat, voici la répartition de mes votes :</p>
+        <div className="vote-bars">
+          <VoteBar label="Pour" pct={62} count={30} color={palette[1]} />
+          <VoteBar label="Contre" pct={25} count={12} color={palette[0]} />
+          <VoteBar label="Abstention" pct={13} count={6} color="#c9a227" />
+        </div>
+        <p className="vote-record__note">
+          Je ne m'oppose pas par principe : je vote pour ce qui sert l'intérêt général. Détail des votes consultable pour chaque délibération.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function VoteBar({ label, pct, count, color }) {
+  return (
+    <div className="vote-bar">
+      <div className="vote-bar__head"><span>{label}</span><span>{count} votes · {pct}%</span></div>
+      <div className="vote-bar__track"><div style={{ width: `${pct}%`, background: color }} /></div>
+    </div>
+  );
+}
+
+function Expression({ palette, headingFont }) {
+  const [tab, setTab] = useState("temoignages");
+  const [text, setText] = useState("");
+  return (
+    <section className="expression">
+      <SectionTitle kicker="Vous avez la parole" title="L'espace d'expression des Freyssenetois." palette={palette} headingFont={headingFont} />
+      <p className="expression__intro">
+        Trois manières de vous exprimer : témoigner publiquement, soutenir des idées, ou m'écrire confidentiellement. Tous les messages sont lus. Aucune censure, sauf injures et propos contraires à la loi.
+      </p>
+
+      <div className="expression__tabs">
+        {[["temoignages", "Témoignages"], ["idees", "Boîte à idées"], ["ecrire", "Nous écrire"]].map(([k, l]) => (
+          <button key={k} onClick={() => setTab(k)}
+            className={"expression__tab " + (tab === k ? "is-active" : "")}
+            style={tab === k ? { borderColor: palette[0], color: palette[0] } : {}}>{l}</button>
+        ))}
+      </div>
+
+      {tab === "temoignages" && (
+        <div className="expression__col">
+          <div className="testimony-form">
+            <textarea placeholder="Partagez votre témoignage… (ce que vous voyez, ce qui vous concerne, ce que vous voulez voir changer)"
+              value={text} onChange={(e) => setText(e.target.value)} />
+            <div className="testimony-form__row">
+              <label className="check"><input type="checkbox" /> Publier de manière anonyme</label>
+              <button className="btn btn--primary" style={{ background: palette[0] }}>Publier mon témoignage →</button>
+            </div>
+          </div>
+          <div className="testimonies">
+            {TEMOIGNAGES.map((t, i) => (
+              <article key={i} className="testimony">
+                <div className="testimony__head">
+                  <div className="testimony__avatar" style={{ background: palette[1], color: palette[3] }}>
+                    {t.author.charAt(0)}
+                  </div>
+                  <div>
+                    <div className="testimony__author">{t.author}</div>
+                    <div className="testimony__meta">{t.lieu} · {t.date}</div>
+                  </div>
+                </div>
+                <p>« {t.text} »</p>
+                <div className="testimony__foot">
+                  <button className="testimony__vote" style={{ borderColor: palette[0], color: palette[0] }}>♥ {t.votes} habitants soutiennent</button>
+                  <a className="testimony__reply">Répondre</a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {tab === "idees" && (
+        <div className="ideas">
+          <div className="ideas__form">
+            <input placeholder="Proposez une idée pour Freyssenet…" />
+            <button className="btn btn--primary" style={{ background: palette[0] }}>Soumettre →</button>
+          </div>
+          {IDEES.map((i, idx) => (
+            <article key={idx} className="idea-row">
+              <div className="idea-row__votes">
+                <button className="idea-row__up" style={{ borderColor: palette[0], color: palette[0] }}>▲</button>
+                <span style={{ fontFamily: headingFont }}>{i.votes}</span>
+              </div>
+              <div className="idea-row__main">
+                <h4 style={{ fontFamily: headingFont }}>{i.title}</h4>
+                <div className="idea-row__meta">Proposée par {i.auteur} · <span style={{ color: palette[0] }}>{i.statut}</span></div>
+              </div>
+              <a className="idea-row__more" style={{ color: palette[0] }}>Voir le débat →</a>
+            </article>
+          ))}
+        </div>
+      )}
+
+      {tab === "ecrire" && (
+        <div className="contact">
+          <div className="contact__form card">
+            <h3 style={{ fontFamily: headingFont }}>Écrivez-nous directement</h3>
+            <p>Vos messages me sont adressés directement. Confidentialité garantie.</p>
+            <div className="contact__row">
+              <label>Votre nom (facultatif)<input placeholder="Marie ou anonyme" /></label>
+              <label>Hameau / lieu-dit<input placeholder="Le Bourg, Cluzel…" /></label>
+            </div>
+            <label>Email pour vous répondre<input placeholder="vous@exemple.fr" type="email" /></label>
+            <label>Sujet
+              <select>
+                <option>Une question sur le conseil municipal</option>
+                <option>Un signalement (route, patrimoine…)</option>
+                <option>Une idée à soumettre</option>
+                <option>Demander un rendez-vous</option>
+                <option>Autre</option>
+              </select>
+            </label>
+            <label>Votre message<textarea rows="6" /></label>
+            <button className="btn btn--primary" style={{ background: palette[0] }}>Envoyer →</button>
+          </div>
+          <aside className="contact__side">
+            <h4 style={{ fontFamily: headingFont }}>Permanence physique</h4>
+            <p>Salle des fêtes, premier samedi du mois<br />de 10h à 12h. Sans rendez-vous.</p>
+            <h4 style={{ fontFamily: headingFont }}>Téléphone</h4>
+            <p>06 12 34 56 78<br />(en soirée)</p>
+            <h4 style={{ fontFamily: headingFont }}>Courrier</h4>
+            <p>Freyssenet Ensemble<br />Mairie de Freyssenet<br />07000 Freyssenet</p>
+          </aside>
+        </div>
+      )}
+    </section>
+  );
+}
+
+function Commune({ palette, headingFont }) {
+  return (
+    <section className="commune">
+      <SectionTitle kicker="Notre commune" title="Freyssenet, ses richesses, sa vie associative." palette={palette} headingFont={headingFont} />
+      <div className="commune__hero">
+        <div className="placeholder placeholder--wide">
+          <div className="placeholder__label">photo · panorama de Freyssenet et chaîne ardéchoise au fond</div>
+        </div>
+        <div className="commune__intro">
+          <p style={{ fontFamily: headingFont, fontSize: 22, lineHeight: 1.4, color: palette[2] }}>
+            « 46 habitants, 1 482 hectares, mille raisons d'aimer Freyssenet. »
+          </p>
+          <p>
+            Aux portes de l'Ardèche méridionale, Freyssenet conjugue patrimoine bâti remarquable, terroir vivant et tissu associatif riche. Cette section met en valeur ce qui fait notre fierté commune — au-delà des clivages politiques.
+          </p>
+        </div>
+      </div>
+
+      <div className="commune__patrimoine">
+        <h3 style={{ fontFamily: headingFont, color: palette[2] }}>Patrimoine remarquable</h3>
+        <div className="patrimoine-grid">
+          {[
+            ["Chapelle Saint-Roch", "XIIᵉ siècle"],
+            ["Le four banal restauré", "XVIIᵉ siècle"],
+            ["Lavoir du village", "1842"],
+            ["Croix de mission", "1856"],
+          ].map(([t, d], i) => (
+            <div key={i} className="patrimoine-card">
+              <div className="placeholder placeholder--square">
+                <div className="placeholder__label">photo</div>
+              </div>
+              <div className="patrimoine-card__t" style={{ fontFamily: headingFont }}>{t}</div>
+              <div className="patrimoine-card__d">{d}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="commune__assos">
+        <h3 style={{ fontFamily: headingFont, color: palette[2] }}>Vie associative</h3>
+        <div className="assos-list">
+          {ASSOS.map((a, i) => (
+            <article key={i} className="card asso-card">
+              <h4 style={{ fontFamily: headingFont }}>{a.name}</h4>
+              <div className="asso-card__focus">{a.focus}</div>
+              <div className="asso-card__next" style={{ color: palette[0] }}>→ {a.next}</div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div className="commune__sondage card" style={{ borderColor: palette[0] }}>
+        <div className="sondage__head">
+          <div className="sondage__pill" style={{ background: palette[0], color: palette[3] }}>Sondage en cours</div>
+          <h3 style={{ fontFamily: headingFont }}>Quelle priorité pour les 6 mois à venir ?</h3>
+        </div>
+        <div className="sondage__opts">
+          {[
+            ["Réfection des chemins ruraux", 47],
+            ["Sauvegarde de la chapelle Saint-Roch", 32],
+            ["Création d'un marché de producteurs", 28],
+            ["Diffusion vidéo du conseil municipal", 51],
+          ].map(([l, pct], i) => (
+            <button key={i} className="sondage__opt">
+              <div className="sondage__opt-bar" style={{ width: `${pct}%`, background: palette[0] }} />
+              <div className="sondage__opt-l">{l}</div>
+              <div className="sondage__opt-pct" style={{ fontFamily: headingFont }}>{pct}%</div>
+            </button>
+          ))}
+        </div>
+        <div className="sondage__foot">28 votes sur 46 habitants · clos le 31 mai 2026</div>
+      </div>
+    </section>
+  );
+}
+
+function Meteo({ palette, headingFont }) {
+  const [data, setData] = useState(null);
+  const [err, setErr] = useState(null);
+  useEffect(() => {
+    const url = "https://api.open-meteo.com/v1/forecast?latitude=44.65&longitude=4.55&current=temperature_2m,relative_humidity_2m,apparent_temperature,wind_speed_10m,wind_direction_10m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max&timezone=Europe%2FParis&forecast_days=7";
+    fetch(url).then(r => r.json()).then(setData).catch(e => setErr(String(e)));
+  }, []);
+
+  const codeLabel = (c) => {
+    if (c == null) return "—";
+    if (c === 0) return "Ciel dégagé";
+    if (c <= 3) return "Partiellement nuageux";
+    if (c <= 48) return "Brouillard";
+    if (c <= 67) return "Pluie";
+    if (c <= 77) return "Neige";
+    if (c <= 82) return "Averses";
+    if (c <= 99) return "Orages";
+    return "—";
+  };
+  const codeIcon = (c) => {
+    if (c == null) return "—";
+    if (c === 0) return "☀";
+    if (c <= 3) return "⛅";
+    if (c <= 48) return "🌫";
+    if (c <= 67) return "🌧";
+    if (c <= 77) return "❄";
+    if (c <= 82) return "🌦";
+    return "⛈";
+  };
+  const days = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
+
+  return (
+    <section className="meteo-sect">
+      <SectionTitle kicker="Météo de Freyssenet" title="Le ciel sur le Coiron, en direct." palette={palette} headingFont={headingFont} />
+      <p className="meteo-sect__intro">
+        Données ouvertes Open-Meteo, mises à jour toutes les heures. Coordonnées : 44,65° N — 4,55° E, altitude 800 m env.
+      </p>
+      {err && <div className="meteo-err">Données indisponibles : {err}</div>}
+      {!data && !err && <div className="meteo-load">Chargement des relevés…</div>}
+      {data && (
+        <>
+          <div className="meteo-now card">
+            <div className="meteo-now__main">
+              <div className="meteo-now__icon" style={{ color: palette[0] }}>{codeIcon(data.current.weather_code)}</div>
+              <div>
+                <div className="meteo-now__t" style={{ fontFamily: headingFont, color: palette[2] }}>
+                  {Math.round(data.current.temperature_2m)}<span>°C</span>
+                </div>
+                <div className="meteo-now__l">{codeLabel(data.current.weather_code)} · ressenti {Math.round(data.current.apparent_temperature)}°</div>
+              </div>
+            </div>
+            <div className="meteo-now__side">
+              <Metric l="Humidité" v={data.current.relative_humidity_2m + " %"} headingFont={headingFont} />
+              <Metric l="Vent" v={Math.round(data.current.wind_speed_10m) + " km/h"} headingFont={headingFont} />
+              <Metric l="Direction" v={data.current.wind_direction_10m + "°"} headingFont={headingFont} />
+            </div>
+          </div>
+          <h3 className="meteo-fc__h" style={{ fontFamily: headingFont, color: palette[2] }}>Prévisions à 7 jours</h3>
+          <div className="meteo-fc">
+            {data.daily.time.map((d, i) => {
+              const dd = new Date(d);
+              return (
+                <div key={d} className="meteo-fc__d">
+                  <div className="meteo-fc__day">{days[dd.getDay()]} {dd.getDate()}</div>
+                  <div className="meteo-fc__icon" style={{ color: palette[0] }}>{codeIcon(data.daily.weather_code[i])}</div>
+                  <div className="meteo-fc__t" style={{ fontFamily: headingFont }}>
+                    <b>{Math.round(data.daily.temperature_2m_max[i])}°</b>
+                    <span>{Math.round(data.daily.temperature_2m_min[i])}°</span>
+                  </div>
+                  <div className="meteo-fc__rain">{data.daily.precipitation_sum[i]?.toFixed(1) || 0} mm</div>
+                </div>
+              );
+            })}
+          </div>
+          <p className="meteo-note">
+            <b>À propos de l'API.</b> Le module Python <i>meteociel_api</i> (Github : Meteo-API/meteociel_api) nécessite un serveur ; ce site étant statique, nous utilisons Open-Meteo, libre et gratuite, qui couvre Freyssenet avec la même qualité de données. Une bascule vers Meteociel sera possible si vous mettez en place un mini-serveur.
+          </p>
+        </>
+      )}
+    </section>
+  );
+}
+
+function Metric({ l, v, headingFont }) {
+  return <div className="metric"><div className="metric__l">{l}</div><div className="metric__v" style={{ fontFamily: headingFont }}>{v}</div></div>;
+}
+
+function Nous({ palette, headingFont }) {
+  return (
+    <section className="nous">
+      <SectionTitle kicker="L'élu d'opposition" title="Une voix au conseil, une conviction." palette={palette} headingFont={headingFont} />
+      <p className="nous__intro">
+        Seul élu d'opposition au conseil municipal de Freyssenet, je siège en minorité sur la liste « Freyssenet Ensemble ». Sans étiquette politique nationale, je porte une démarche claire : transparence, écoute, exigence.
+      </p>
+      <div className="elus-grid">
+        {ELUS.map((e, i) => (
+          <article key={i} className="card elu-card">
+            <div className="placeholder placeholder--portrait">
+              <div className="placeholder__label">portrait · {e.initials}</div>
+            </div>
+            <div className="elu-card__body">
+              <h3 style={{ fontFamily: headingFont }}>{e.name}</h3>
+              <div className="elu-card__role" style={{ color: palette[0] }}>{e.role}</div>
+              <p>« {e.quote} »</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div className="charte">
+        <h3 style={{ fontFamily: headingFont, color: palette[2] }}>Ma charte en quatre engagements</h3>
+        <ol className="charte__list">
+          <li><span style={{ color: palette[0], fontFamily: headingFont }}>01</span><div><b>Transparence intégrale.</b> Tous les documents publics sont publiés ici dès leur disponibilité, sans tri.</div></li>
+          <li><span style={{ color: palette[0], fontFamily: headingFont }}>02</span><div><b>Écoute permanente.</b> Permanence mensuelle, ligne directe, courrier ouvert : aucun sujet n'est tabou.</div></li>
+          <li><span style={{ color: palette[0], fontFamily: headingFont }}>03</span><div><b>Opposition constructive.</b> Je vote pour tout ce qui sert l'intérêt général, peu importe l'auteur de la proposition.</div></li>
+          <li><span style={{ color: palette[0], fontFamily: headingFont }}>04</span><div><b>Démocratie vivante.</b> Sondages, consultations, budgets participatifs : je teste, je propose, j'insiste.</div></li>
+        </ol>
+      </div>
+    </section>
+  );
+}
+
+function Newsletter({ palette, headingFont }) {
+  return (
+    <section className="newsletter" style={{ background: palette[2], color: palette[3] }}>
+      <div className="newsletter__inner">
+        <div>
+          <div className="newsletter__kick" style={{ color: palette[0] }}>Restons en lien</div>
+          <h2 style={{ fontFamily: headingFont }}>Une lettre d'information mensuelle, sans concession.</h2>
+          <p>L'essentiel du conseil, nos prochaines actions, les sondages en cours. Pas de spam, pas de récup' politique. Désabonnement en un clic.</p>
+        </div>
+        <form className="newsletter__form" onSubmit={(e) => e.preventDefault()}>
+          <input placeholder="votre@email.fr" type="email" />
+          <button style={{ background: palette[0], color: palette[3] }}>S'abonner →</button>
+        </form>
+      </div>
+    </section>
+  );
+}
+
+function Footer({ palette, headingFont }) {
+  return (
+    <footer className="site-footer">
+      <div className="site-footer__inner">
+        <div>
+          <div className="site-brand__name" style={{ fontFamily: headingFont, fontSize: 20 }}>Freyssenet Ensemble</div>
+          <p className="site-footer__about">
+            Site édité par l'élu d'opposition au conseil municipal de Freyssenet (Ardèche).
+            Indépendant de la mairie. Hébergement OVH France.
+          </p>
+        </div>
+        <div className="site-footer__cols">
+          <div>
+            <h5>Le site</h5>
+            <a>Accueil</a><a>Conseil municipal</a><a>Bilan de la majorité</a><a>Mon action</a>
+          </div>
+          <div>
+            <h5>Participer</h5>
+            <a>Témoigner</a><a>Boîte à idées</a><a>Nous écrire</a><a>Newsletter</a>
+          </div>
+          <div>
+            <h5>Mentions</h5>
+            <a>Mentions légales</a><a>Politique de confidentialité</a><a>Modération</a><a>Contact</a>
+          </div>
+        </div>
+      </div>
+      <div className="site-footer__bottom">
+        <span>© 2026 Freyssenet Ensemble — Tous droits réservés</span>
+        <span>Site indépendant · n'engage pas la mairie de Freyssenet</span>
+      </div>
+    </footer>
+  );
+}
+
+// ───── APP ─────
+function App() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  const [section, setSection] = useState("accueil");
+  const palette = t.palette;
+
+  useEffect(() => {
+    const r = document.documentElement;
+    r.style.setProperty("--fs-heading", `'${t.headingFont}', ui-serif, Georgia, serif`);
+    r.style.setProperty("--fs-body", `'${t.bodyFont}', ui-sans-serif, system-ui, sans-serif`);
+    r.style.setProperty("--c-primary", palette[0]);
+    r.style.setProperty("--c-secondary", palette[1]);
+    r.style.setProperty("--c-ink", palette[2]);
+    r.style.setProperty("--c-paper", palette[3]);
+    r.style.setProperty("--card-border", t.cardStyle === "bordered" ? "1px solid rgba(0,0,0,.1)" : "1px solid transparent");
+    r.style.setProperty("--card-shadow", t.cardStyle === "shadow" ? "0 4px 20px rgba(0,0,0,.06)" : "none");
+    r.style.setProperty("--card-bg", t.cardStyle === "filled" ? "rgba(0,0,0,.025)" : "transparent");
+  }, [t]);
+
+  useEffect(() => { window.scrollTo({ top: 0, behavior: "smooth" }); }, [section]);
+
+  return (
+    <div className="site" style={{ background: palette[3], color: palette[2] }}>
+      <Header section={section} setSection={setSection} palette={palette} headingFont={t.headingFont} />
+      <main>
+        {section === "accueil" && <>
+          <Hero palette={palette} headingFont={t.headingFont} setSection={setSection} tone={t.tone} />
+          <Actus palette={palette} headingFont={t.headingFont} />
+        </>}
+        {section === "conseil" && <Conseil palette={palette} headingFont={t.headingFont} />}
+        {section === "bilan" && <KPI palette={palette} headingFont={t.headingFont} format={t.kpiFormat} />}
+        {section === "opposition" && <Opposition palette={palette} headingFont={t.headingFont} />}
+        {section === "expression" && <Expression palette={palette} headingFont={t.headingFont} />}
+        {section === "commune" && <Commune palette={palette} headingFont={t.headingFont} />}
+        {section === "meteo" && <Meteo palette={palette} headingFont={t.headingFont} />}
+        {section === "nous" && <Nous palette={palette} headingFont={t.headingFont} />}
+      </main>
+      <Newsletter palette={palette} headingFont={t.headingFont} />
+      <Footer palette={palette} headingFont={t.headingFont} />
+
+      <TweaksPanel>
+        <TweakSection label="Palette" />
+        <TweakColor label="Couleurs" value={t.palette}
+          options={[
+            ["#8b2635", "#4a5d3a", "#1a1a1a", "#fafaf7"],
+            ["#1e3a5f", "#b8956a", "#1a1a1a", "#fafafa"],
+            ["#2d4a3e", "#c4633f", "#1a1a1a", "#f5f1e8"],
+            ["#3d3024", "#a87d4f", "#1a1a1a", "#f0ede4"],
+            ["#0d3b66", "#d62828", "#1a1a1a", "#ffffff"],
+            ["#1a1a1a", "#c9a227", "#0a0a0a", "#f5f5f0"],
+          ]}
+          onChange={(v) => setTweak("palette", v)} />
+
+        <TweakSection label="Typographie" />
+        <TweakSelect label="Titres" value={t.headingFont}
+          options={["Instrument Serif", "Fraunces", "Cormorant Garamond", "Playfair Display", "Public Sans"]}
+          onChange={(v) => setTweak("headingFont", v)} />
+        <TweakSelect label="Corps" value={t.bodyFont}
+          options={["Public Sans", "Inter", "IBM Plex Sans", "Source Sans 3", "Work Sans"]}
+          onChange={(v) => setTweak("bodyFont", v)} />
+
+        <TweakSection label="Indicateurs (Bilan)" />
+        <TweakRadio label="Format" value={t.kpiFormat}
+          options={["jauges", "notes", "feux"]}
+          onChange={(v) => setTweak("kpiFormat", v)} />
+
+        <TweakSection label="Cartes" />
+        <TweakRadio label="Style" value={t.cardStyle}
+          options={["bordered", "shadow", "filled"]}
+          onChange={(v) => setTweak("cardStyle", v)} />
+
+        <TweakSection label="Ton éditorial" />
+        <TweakRadio label="Ton" value={t.tone}
+          options={["engage", "institutionnel"]}
+          onChange={(v) => setTweak("tone", v)} />
+      </TweaksPanel>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
